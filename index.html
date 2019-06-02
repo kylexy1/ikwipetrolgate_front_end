@@ -109,28 +109,30 @@
             </div>
             <h1 style="margin-left: 20px;color: #CED3D7;font-weight: lighter;margin-top: 20px"> Register compagny</h1>
             <div class="card" style="padding: 20px;margin-left: 100px;width: 70%;padding-bottom: 52px;margin-top: 10px">
-              <div style="display: flex;flex-direction: row">
-                <div style="display: flex;flex-direction: column">
-                  <h3 style="color: #E1E4E7;font-weight: normal;font-family: sans-serif">Compagny Identification</h3>
-                  <div style="margin-top: 20px;">
-                    <input type="text" value="IKWIMPETROLGATE"  class="input-text focused" id="name">
-                    <input type="text" value="10878292" placeholder="Company Tin"  class="input-text focused">
+             <form id="form">
+                  <div style="display: flex;flex-direction: row">
+                    <div style="display: flex;flex-direction: column">
+                      <h3 style="color: #E1E4E7;font-weight: normal;font-family: sans-serif">Compagny Identification</h3>
+                      <div style="margin-top: 20px;">
+                        <input type="text" name="name" required class="input-text focused" id="name">
+                        <input type="text" name="tin_number" required  placeholder="Company Tin"  class="input-text focused">
+                      </div>
+                      </div>
+                    <div style="display: flex;flex-direction: column;margin-left: 130px">
+                      <h3 style="color: #E1E4E7;font-weight: normal;font-family: sans-serif">Compagny Address</h3>
+                      <div style="margin-top: 20px;">
+                        <input type="text" name="email" required  placeholder="Email"  class="input-text focused">
+                        <input type="text" name="phone" required placeholder="Phone" class="input-text focused" id="phone">
+                        <input type="text" name="district" required placeholder="District"  class="input-text focused">
+                        <input type="text" name="sector" required  placeholder="Sector"  class="input-text focused">
+                      </div>
+                    </div>
                   </div>
+                  <div style="text-align: center;flex-direction: row;display: flex;align-items: center;justify-content: center;margin-top: 85px">
+                      <button type="reset" id="clear" class="btn" >CANCEL</button>
+                      <button type="submit" style="margin-left: 10px;background: #FF7400;color: #E1E4E7;" class="btn">REGISTER</button>
                   </div>
-                <div style="display: flex;flex-direction: column;margin-left: 130px">
-                  <h3 style="color: #E1E4E7;font-weight: normal;font-family: sans-serif">Compagny Address</h3>
-                  <div style="margin-top: 20px;">
-                    <input type="text" value="user@ikwim.com" placeholder="Email"  class="input-text focused">
-                    <input type="text" value="25078845321" placeholder="Phone" class="input-text focused" id="phone">
-                    <input type="text" value="Gasabo" placeholder="District"  class="input-text focused">
-                    <input type="text" value="Kabagari" placeholder="Sector"  class="input-text focused">
-                  </div>
-                </div>
-              </div>
-              <div style="text-align: center;flex-direction: row;display: flex;align-items: center;justify-content: center;margin-top: 85px">
-              <input type="button" class="btn" value="CANCEL">
-              <input type="button" style="margin-left: 10px;background: #FF7400;color: #E1E4E7;" class="btn" value="REGISTER">
-            </div>
+             </form>
             </div>
           </div>
             <div class="right-wrapper" style="margin-right: 30px;margin-top: 45px">
@@ -279,37 +281,7 @@
       </div>
 
   <script src="js/jquery.js" ></script>
-  <script>
-      $(document).ready(function() {
-          $.ajax({
-              url: "http://127.0.0.1:8000/get-all-data",
-          }).done(function(data) {
-              data = data[0]
-              $("#total").html(data.header.total);
-              $("#revenue").html(data.header.revenue);
-              $("#growth").html(data.header.growth);
 
-
-              $("#bon").html(data.right.bon);
-              $("#cards").html(data.right.cards);
-              $("#discounts").html(data.right.discounts);
-
-              $("#stock").html(data.right.stock);
-              $("#cards-sold").html(data.right.cardsSold);
-              $("#bon-sold").html(data.right.bonSold);
-              $("#cars-in-stock").html(data.right.cardsInStock);
-
-
-          });
-      });
-      $("#fab").on("click", function (e) {
-          $("#fab-layout").toggle();
-          $(".input-text").removeClass("focused")
-          $("#name").addClass("focused")
-          $("#phone").addClass("error")
-      })
-  </script>
-  <script src="js/plugins.js"></script>
   <script src="js/main.js"></script>
   <script>
 

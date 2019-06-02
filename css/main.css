@@ -3,6 +3,18 @@
     padding: 0px;
     font-family: sans-serif;
 }
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: #E1E4E7;
+    opacity: 1; /* Firefox */
+}
+
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+    color: #E1E4E7;
+}
+
+::-ms-input-placeholder { /* Microsoft Edge */
+    color: #E1E4E7;
+}
 html{
     background: #383635;
 }
@@ -76,6 +88,7 @@ html{
 .main-panel{
     height: 100% !important;
     width: 100% !important;
+    background: #585554
 }
 .main-panel .top-bar{
     background: #ffffff;
@@ -195,6 +208,7 @@ html{
     color: #656D7E;
     border-radius: 10px;
 }
+.btn:hover,.btn:active{border: none}
 .badge{width: 7px;height: 15px;background: #56D9FE;border-radius: 20px;margin-left: 12px}
 .vertical{writing-mode: vertical-rl;
     text-orientation: mixed;
